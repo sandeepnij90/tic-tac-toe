@@ -6,6 +6,16 @@
     align-items: center;
     justify-content: center;
     border: 1px solid black;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.tile:hover {
+    background-color: #f0f0f0;
+}
+
+.tile:active{
+    transform: scale(0.95);
 }
 
 .tile:disabled {

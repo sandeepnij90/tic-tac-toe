@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Tile } from "../tile/Tile";
 import { isWinningCombination } from "../../../utils/isWinningCombination";
 import "./game.css";
 import { Board } from "../../board/Board";
