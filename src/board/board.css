@@ -1,0 +1,25 @@
+.board {
+    display: grid;
+    justify-items: center;
+    max-width: 306px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    margin: auto;
+}
+
+.restart-button {
+    padding: 8px 24px;
+    border-radius: 8px;
+    background-color: #3756e2;
+    color: white;
+    margin: 20px auto;
+    display: block;
+    max-width: 120px;
+    border: 0;
+
+}
+
+.restart-button:hover {
+    background-color: #45a049;
+    cursor: pointer;
+}
