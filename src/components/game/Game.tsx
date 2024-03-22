@@ -3,7 +3,7 @@ import { isWinningCombination } from "../../../utils/isWinningCombination";
 import "./game.css";
 import { Board } from "../../board/Board";
 
-export type Player = "X" | "O";
+export type Player = "X" | "O" | "-";
 
 export const Game = () => {
   const [currentPlayer, setCurrentPlayer] = useState<Player>("O");
@@ -28,6 +28,10 @@ export const Game = () => {
     if (playerX.length >= 3 && isWinningCombination(playerX)) {
       setWinner("X");
     }
+
+    if (playerO.length + playerX.length === 9 && !winner) {
+      setWinner("-");
+    }
   }, [playerO, playerX]);
 
   const restartGame = () => {
@@ -42,7 +46,11 @@ export const Game = () => {
       {!Boolean(winner) && (
         <h1 className="game__title">It is {currentPlayer}'s move</h1>
       )}
-      {winner && <h1 className="game__title">Player {winner} wins!</h1>}
+      {winner && winner === "-" ? (
+        <h1 className="game__title">Draw</h1>
+      ) : (
+        <h1 className="game__title">Player {winner} wins!</h1>
+      )}
       <Board
         onClick={handlePlayerMove}
         currentPlayer={currentPlayer}
