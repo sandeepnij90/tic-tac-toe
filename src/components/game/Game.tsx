@@ -46,11 +46,13 @@ export const Game = () => {
       {!Boolean(winner) && (
         <h1 className="game__title">It is {currentPlayer}'s move</h1>
       )}
-      {winner && winner === "-" ? (
-        <h1 className="game__title">Draw</h1>
-      ) : (
+
+      {winner === "-" && <h1 className="game__title">Draw</h1>}
+
+      {Boolean(winner) && (
         <h1 className="game__title">Player {winner} wins!</h1>
       )}
+
       <Board
         onClick={handlePlayerMove}
         currentPlayer={currentPlayer}
