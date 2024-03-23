@@ -49,7 +49,7 @@ export const Game = () => {
 
       {winner === "-" && <h1 className="game__title">Draw</h1>}
 
-      {Boolean(winner) && (
+      {Boolean(winner) && winner !== "-" && (
         <h1 className="game__title">Player {winner} wins!</h1>
       )}
 
