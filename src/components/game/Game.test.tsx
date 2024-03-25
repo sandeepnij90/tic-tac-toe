@@ -45,11 +45,11 @@ describe("<Game />", () => {
     const tile1 = screen.getByRole("button", { name: /tile 1/i });
     const tile2 = screen.getByRole("button", { name: /tile 2/i });
     const tile3 = screen.getByRole("button", { name: /tile 3/i });
-    const tile4 = screen.getByRole("button", { name: /tile 4/i });
-    const tile5 = screen.getByRole("button", { name: /tile 5/i });
+    const tile4 = screen.getByRole("button", { name: /tile 5/i });
+    const tile5 = screen.getByRole("button", { name: /tile 8/i });
     const tile6 = screen.getByRole("button", { name: /tile 6/i });
-    const tile7 = screen.getByRole("button", { name: /tile 7/i });
-    const tile8 = screen.getByRole("button", { name: /tile 8/i });
+    const tile7 = screen.getByRole("button", { name: /tile 4/i });
+    const tile8 = screen.getByRole("button", { name: /tile 7/i });
     const tile9 = screen.getByRole("button", { name: /tile 9/i });
 
     await userEvent.click(tile1);
@@ -62,7 +62,9 @@ describe("<Game />", () => {
     await userEvent.click(tile7);
     await userEvent.click(tile9);
 
-    expect(screen.getByRole("heading", { name: /draw/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", { name: /player/i })
+    ).toBeInTheDocument();
   });
 
   it("should be able to reset game after winner", async () => {

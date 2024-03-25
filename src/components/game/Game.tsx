@@ -32,7 +32,7 @@ export const Game = () => {
     if (playerO.length + playerX.length === 9 && !winner) {
       setWinner("-");
     }
-  }, [playerO, playerX]);
+  }, [playerO, playerX, winner]);
 
   const restartGame = () => {
     setPlayerO([]);
